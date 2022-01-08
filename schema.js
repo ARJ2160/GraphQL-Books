@@ -9,21 +9,20 @@ const {
     GraphQLList
 } = graphql
 
+// let books = [
+//     { name: "The Hard Thing About Hard Things",genre: "Fantasy", id: "1", authorID: "1" },
+//     { name: "The 10X Rule",genre: "Action", id: "2", authorID: "2"  },
+//     { name: "The Lean Startup",genre: "Mystery", id: "3", authorID: "3"  },
+//     { name: "Think Like a Monk",genre: "Mystery", id: "3", authorID: "2"  },
+//     { name: "Atomic Habits",genre: "Mystery", id: "3", authorID: "3"  },
+//     { name: "Tools of Titans",genre: "Mystery", id: "3", authorID: "1"  },
+// ]
 
-let books = [
-    { name: "The Hard Thing About Hard Things",genre: "Fantasy", id: "1", authorID: "1" },
-    { name: "The 10X Rule",genre: "Action", id: "2", authorID: "2"  },
-    { name: "The Lean Startup",genre: "Mystery", id: "3", authorID: "3"  },
-    { name: "Think Like a Monk",genre: "Mystery", id: "3", authorID: "2"  },
-    { name: "Atomic Habits",genre: "Mystery", id: "3", authorID: "3"  },
-    { name: "Tools of Titans",genre: "Mystery", id: "3", authorID: "1"  },
-]
-
-let authors = [
-    { name: "Tom Freslin",age: 44 , id: "1" },
-    { name: "Grant Cardone",age: 33 , id: "2" },
-    { name: "James Clear",age: 23 , id: "3" },
-]
+// let authors = [
+//     { name: "Tom Freslin",age: 44 , id: "1" },
+//     { name: "Grant Cardone",age: 33 , id: "2" },
+//     { name: "James Clear",age: 23 , id: "3" },
+// ]
 
 const BookType = new GraphQLObjectType({
     name: "Book",
