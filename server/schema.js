@@ -38,6 +38,7 @@ const AuthorType = new GraphQLObjectType({
         }
     })
 })
+
 // TO GET DATA FROM MONGODB
 const rootQuery = new GraphQLObjectType({
     name: "RootQuery",
