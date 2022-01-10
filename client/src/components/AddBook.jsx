@@ -4,16 +4,11 @@ import { AUTHOR_QUERY, ADD_BOOK_MUTATION, BOOKS_QUERY } from '../queries/queries
 
 const AddBook = () => {
 
-    const initialState = {
-        name: '',
-        genre: '',
-        authorId: ''
-    }
-    const [name, setName] = useState(initialState.name)
-    const [genre, setGenre] = useState(initialState.genre)
-    const [authorId, setAuthorId] = useState(initialState.authorId)
+    const [name, setName] = useState('')
+    const [genre, setGenre] = useState('')
+    const [authorId, setAuthorId] = useState('')
     const { loading, data } = useQuery(AUTHOR_QUERY)
-    const [onSubmitHandler] = useMutation(ADD_BOOK_MUTATION)
+    const [onSubmitHandler] = useMutation(ADD_BOOK_MUTATION) 
 
     const displayAuthors = () => {
         if (loading) {
@@ -29,8 +24,7 @@ const AddBook = () => {
                             className="book-list"
                             key={id}
                             value={id}
-                        >
-                            {name}
+                        >{name}
                         </option>
                     )
                 })
@@ -38,9 +32,8 @@ const AddBook = () => {
         }
     }
 
-
-    // Parse Form Data to MongoDB
-    const useHandleSubmit = async (e) => {
+    // Reset Forms
+    const useHandleSubmit = e => {
         e.preventDefault()
         setName('')
         setGenre('')
@@ -71,6 +64,7 @@ const AddBook = () => {
             <div className="field">
                 <label htmlFor="Book Name:">Book Author:</label>
                 <select
+                    value={authorId}
                     onChange={e => setAuthorId(e.target.value)}
                 >
                     {displayAuthors()}
@@ -79,7 +73,14 @@ const AddBook = () => {
 
             <button
                 type="submit"
-                onClick={() => onSubmitHandler({ variables: { name, genre, authorId }, refetchQueries: [BOOKS_QUERY]})}
+                onClick={() => {
+                    if (name !== '' && genre !== '' && authorId !== '') {
+                        onSubmitHandler({
+                            variables: { name, genre, authorId },
+                            refetchQueries: [BOOKS_QUERY]
+                        })
+                    }
+                }}
             >+</button>
 
         </form>

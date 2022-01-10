@@ -1,14 +1,87 @@
-*{
-    
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
 body{
-    background: #eee;
+    background: #ABD1C6;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.book-list{
-    list-style: disc;
+
+#main h1{
+    color: #444;
+    text-align: center;
+}
+
+#main{
+    padding: 0px;
+    box-sizing: border-box;
+    width: 60%;
+    height: 100%;
+}
+
+#book-list{
+    width: auto;
+    padding: 0;
+}
+
+#book-list li{
+    display: inline-block;
+    width: auto;
+    margin: 12px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #880E4F;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    color: #001E1D;
+}
+
+form{
+    background: #004643;
+    color: #fffffe;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+}
+
+form .field{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+form label{
+    text-align: right;
+    padding: 6px;
+}
+
+form input, form select{
+    margin: 4px 0;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+form button{
+    color: #fffffe;
+    font-size: 2em;
+    background: #880E4F;
+    border: 0;
+    padding: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+#book-details{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: #004643;
+    padding: 30px;
+    overflow: auto;
+    box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    color: #fffffe;
 }

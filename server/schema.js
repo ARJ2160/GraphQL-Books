@@ -12,7 +12,7 @@ const {
 const Book = require("./models/books")
 const Author = require("./models/authors")
 
-// DEFINING BOOK AND AUTHOR TYPES
+// DEFINING BOOK-QUERY TYPE
 const BookType = new GraphQLObjectType({
     name: "Book",
     fields: () => ({
@@ -26,6 +26,7 @@ const BookType = new GraphQLObjectType({
     })
 })
 
+// DEFINING AUTHOR-QUERY TYPE
 const AuthorType = new GraphQLObjectType({
     name: "Author",
     fields: () => ({
